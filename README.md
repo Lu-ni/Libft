@@ -10,12 +10,12 @@
 ## first part
 In this first part, you must re-code a set of the libc functions, as defined in their man. Your functions will need to present the same prototype and behaviors as the orig- inals. Your functions’ names must be prefixed by “ft_”. For instance strlen becomes ft_strlen.
 
- [] isalpha
- [] isdigit
- [] isalnum
- [] isascii
- [] isprint
- [] strlen
+ [w] isalpha
+ [w] isdigit
+ [w] isalnum
+ [w] isascii
+ [w] isprint
+ [w] strlen
  [] memset
  [] bzer
  [] memcpy
