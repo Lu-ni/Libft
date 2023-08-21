@@ -1,4 +1,4 @@
 int	ft_isalpha(char c)
 {
-	return	('A' < c && c < 'z');
+	return	('A' <= c && c <= 'z');
 }
