@@ -2,10 +2,10 @@
 
 void *memset(void *b, int c, size_t len)
 {
-    void *str;
+    char *str;
 
-    str = b;
-    while (len-- >= 0)
+    str = (char *)b;
+    while (len-- > 0)
     {
         *str = c;
     }
