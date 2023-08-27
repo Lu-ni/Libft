@@ -5,38 +5,38 @@ extern "C" {
 
 #include "CppUTest/TestHarness.h"
 
-TEST_GROUP(FTIsdigit) {};
+TEST_GROUP(FTt) {};
 
 //unit test for: isalpha
-TEST(FTIsdigit, FTisalpha) {
+TEST(FTt, FTisalpha) {
     for (int i = 0; i < 256; i++) {
         CHECK(ft_isalpha(i) == isalpha(i));
     }
 }
 
 //unit test for: isdigit
-TEST(FTIsdigit, FTisdigit) {
+TEST(FTt, FTisdigit) {
     for (int i = 0; i < 256; i++) {
         CHECK(ft_isdigit(i) == isdigit(i));
     }
 }
 
 //unit test for: isalnum
-TEST(FTIsdigit, FTisalnum) {
+TEST(FTt, FTisalnum) {
     for (int i = 0; i < 256; i++) {
         CHECK(ft_isalnum(i) == isalnum(i));
     }
 }
 
 //unit test for: isascii
-    TEST(FTIsdigit, FTisascii) {
+    TEST(FTt, FTisascii) {
     for (int i = 0; i < 256; i++) {
         CHECK(ft_isascii(i) == isascii(i));
     }
 }
 
 //unit test for: isprint
-TEST(FTIsdigit, FTisprint) {
+TEST(FTt, FTisprint) {
     for (int i = 0; i < 256; i++) {
         CHECK(ft_isprint(i) == isprint(i));
     }
