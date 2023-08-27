@@ -64,9 +64,46 @@ TEST(FTt, FTmemset) {
     memset(str2 + 2, 'e', 3);
     STRCMP_EQUAL(str2,str1);
 }
-//unit test for: bzer
+//unit test for: bzero
+TEST(FTt, FTbzero) {
+    char str1[10] = {'a','a','a','a','a','a','a','a','\0'};
+    char str2[10] = {'a','a','a','a','a','a','a','a','\0'};
+
+    ft_bzero(str1, 4);
+    bzero(str2, 4);
+    STRCMP_EQUAL(str2,str1);
+
+    ft_bzero(str1 + 2, 3);
+    bzero(str2 + 2, 3);
+    STRCMP_EQUAL(str2,str1);
+}
+
 //unit test for: memcpy
+TEST(FTt, FTmemcpy) {
+    char src1[10] = {'a','a','a','a','a','a','a','a','\0'};
+    char dest1[10] = {'x','x','x','x','x','x','x','x','\0'};
+    char src2[10] = {'a','a','a','a','a','a','a','a','\0'};
+    char dest2[10] = {'x','x','x','x','x','x','x','x','\0'};
+
+    ft_memcpy(dest1, src1, 4);
+    memcpy(dest2, src2, 4);
+    STRCMP_EQUAL(dest1, dest2);
+}
+
 //unit test for: memmove
+TEST(FTt, FTmemmove) {
+    char src1[10] = {'a','e','w','q','t','y','u','i','\0'};
+    char src2[10] = {'a','e','w','q','t','y','u','i','\0'};
+
+    ft_memmove(src1, src1+2, 4);
+    memmove(src2, src2+2, 4);
+    STRCMP_EQUAL(src1, src2);
+
+    ft_memmove(src1 + 2, src1, 4);
+    memmove(src2 + 2, src2, 4);
+    STRCMP_EQUAL(src1, src2);
+}
+
 //unit test for: strlcpy
 //unit test for: strlcat
 //unit test for: toupper

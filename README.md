@@ -16,10 +16,10 @@ In this first part, you must re-code a set of the libc functions, as defined in 
  [w] isascii
  [w] isprint
  [w] strlen
- [] memset
- [] bzer
- [] memcpy
- [] memmove
+ [w] memset
+ [w] bzero
+ [w] memcpy
+ [w] memmove
  [] strlcpy
  [] strlcat
  [] toupper
