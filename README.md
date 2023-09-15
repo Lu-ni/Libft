@@ -20,10 +20,10 @@ In this first part, you must re-code a set of the libc functions, as defined in 
  [w] bzero
  [w] memcpy
  [w] memmove
- [] strlcpy
- [] strlcat
- [] toupper
- [] tolower
+ [w] strlcpy
+ [w] strlcat
+ [w] toupper
+ [w] tolower
  [] strchr
  [] strrchr
  [] strncmp
