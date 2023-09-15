@@ -26,9 +26,9 @@ In this first part, you must re-code a set of the libc functions, as defined in 
  [w] tolower
  [w] strchr
  [w] strrchr
- [] strncmp
- [] memchr
- [] memcmp
+ [w] strncmp
+ [w] memchr
+ [w] memcmp
  [] strnstr
  [] atoi
 
