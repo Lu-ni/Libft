@@ -115,5 +115,9 @@ TEST(FTt, FTmemmove) {
 //unit test for: memcmp
 //unit test for: strnstr
 //unit test for: atoi
+TEST(FTt, FTatoi) {
+    CHECK(ft_atoi("123") == atoi("123"));
+}
+
 //unit test for: calloc
 //unit test for: strup
