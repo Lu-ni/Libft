@@ -29,8 +29,8 @@ In this first part, you must re-code a set of the libc functions, as defined in 
  [w] strncmp
  [w] memchr
  [w] memcmp
- [] strnstr
- [] atoi
+ [w] strnstr
+ [w] atoi
 
  [] calloc
  [] strup
