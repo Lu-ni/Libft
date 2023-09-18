@@ -4,6 +4,8 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
     char *srccpy;
 
+    if (dstsize == 0)
+        return ft_strlen(src);
     srccpy = (char *) src;
     dstsize--;
     while(*srccpy && (dstsize > 0))
