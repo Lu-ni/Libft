@@ -9,7 +9,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     string2 = (unsigned char *) s2;
     while (*string1 && *string2 && n > 0)
     {
-        if (*string1 != *string2)
+        if ((*string1 != *string2) || n == 1)
             return (*string1 - *string2);
         string1 ++;
         string2 ++;
