@@ -4,6 +4,7 @@ extern "C" {
 }
 
 #include "CppUTest/TestHarness.h"
+#include <cstring>
 
 TEST_GROUP(Ft) {};
 
@@ -105,15 +106,139 @@ TEST(FTt, FTmemmove) {
 }
 
 //unit test for: strlcpy
+TEST_GROUP(FTStrlcpy) {};
+TEST(FTStrlcpy, RegularString) {
+    char dest1[50];
+    char dest2[50];
+    CHECK(ft_strlcpy(dest1, "Hello, World!", sizeof(dest1)) == strlcpy(dest2, "Hello, World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, EmptySource) {
+    char dest1[50] = "previous";
+    char dest2[50] = "previous";
+    CHECK(ft_strlcpy(dest1, "", sizeof(dest1)) == strlcpy(dest2, "", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, EmptyDestination) {
+    char dest1[1] = "";
+    char dest2[1] = "";
+    CHECK(ft_strlcpy(dest1, "Hello", sizeof(dest1)) == strlcpy(dest2, "Hello", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, BufferLargerThanSource) {
+    char dest1[50];
+    char dest2[50];
+    CHECK(ft_strlcpy(dest1, "Hello", sizeof(dest1)) == strlcpy(dest2, "Hello", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, BufferSmallerThanSource) {
+    char dest1[5];
+    char dest2[5];
+    CHECK(ft_strlcpy(dest1, "Hello, World!", sizeof(dest1)) == strlcpy(dest2, "Hello, World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, BufferEqualToSource) {
+    char dest1[14];
+    char dest2[14];
+    CHECK(ft_strlcpy(dest1, "Hello, World!", sizeof(dest1)) == strlcpy(dest2, "Hello, World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcpy, BufferSizeZero) {
+    char dest1[1] = "";
+    char dest2[1] = "";
+    CHECK(ft_strlcpy(dest1, "Hello, World!", 0) == strlcpy(dest2, "Hello, World!", 0));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
 //unit test for: strlcat
+TEST_GROUP(FTStrlcat) {};
+
+TEST(FTStrlcat, RegularStringConcatenation) {
+    char dest1[50] = "Hello, ";
+    char dest2[50] = "Hello, ";
+    CHECK(ft_strlcat(dest1, "World!", sizeof(dest1)) == strlcat(dest2, "World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, EmptySource) {
+    char dest1[50] = "Hello, ";
+    char dest2[50] = "Hello, ";
+    CHECK(ft_strlcat(dest1, "", sizeof(dest1)) == strlcat(dest2, "", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, EmptyDestination) {
+    char dest1[1] = "";
+    char dest2[1] = "";
+    CHECK(ft_strlcat(dest1, "World!", sizeof(dest1)) == strlcat(dest2, "World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, BufferLargerThanCombinedLength) {
+    char dest1[50] = "Hello, ";
+    char dest2[50] = "Hello, ";
+    CHECK(ft_strlcat(dest1, "World!", sizeof(dest1)) == strlcat(dest2, "World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, BufferSmallerThanCombinedLength) {
+    char dest1[10] = "Hello, ";
+    char dest2[10] = "Hello, ";
+    CHECK(ft_strlcat(dest1, "World! Universe!", sizeof(dest1)) == strlcat(dest2, "World! Universe!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, BufferEqualToCombinedLength) {
+    char dest1[14] = "Hello, ";
+    char dest2[14] = "Hello, ";
+    CHECK(ft_strlcat(dest1, "World!", sizeof(dest1)) == strlcat(dest2, "World!", sizeof(dest2)));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
+TEST(FTStrlcat, BufferSizeZero) {
+    char dest1[1] = "";
+    char dest2[1] = "";
+    CHECK(ft_strlcat(dest1, "World!", 0) == strlcat(dest2, "World!", 0));
+    STRCMP_EQUAL(dest1, dest2);
+}
+
 //unit test for: toupper
-//unit test for: tolower
-//unit test for: strchr
-//unit test for: strrchr
-//unit test for: strncmp
-//unit test for: memchr
-//unit test for: memcmp
-//unit test for: strnstr
+TEST_GROUP(FTtoupper) {};
+
+TEST(FTtoupper, UppercaseCharacters) {
+    for (char c = 'A'; c <= 'Z'; ++c) {
+        CHECK(ft_toupper(c) == toupper(c));
+    }
+}
+
+TEST(FTtoupper, LowercaseCharacters) {
+    for (char c = 'a'; c <= 'z'; ++c) {
+        CHECK(ft_toupper(c) == toupper(c));
+    }
+}
+
+TEST(FTtoupper, DigitsAndSpecialChars) {
+    for (char c = '0'; c <= '9'; ++c) {
+        CHECK(ft_toupper(c) == toupper(c));
+    }
+    const char* specialChars = "!@#$%^&*()-_=+[]{}|;:'\",.<>?/";
+    for (int i = 0; specialChars[i]; ++i) {
+        CHECK(ft_toupper(specialChars[i]) == toupper(specialChars[i]));
+    }
+}
+
+TEST(FTtoupper, NonASCII) {
+    for (int c = 128; c <= 255; ++c) {
+        CHECK(ft_toupper(c) == toupper(c));
+    }
+}
+
 //unit test for: atoi
 TEST(FTt, FTatoi) {
     CHECK(ft_atoi("123") == atoi("123"));
