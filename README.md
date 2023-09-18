@@ -32,5 +32,5 @@ In this first part, you must re-code a set of the libc functions, as defined in 
  [w] strnstr
  [w] atoi
 
- [] calloc
- [] strup
+ [w] calloc
+ [w] strup
