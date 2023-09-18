@@ -117,6 +117,13 @@ TEST(FTt, FTmemmove) {
 //unit test for: atoi
 TEST(FTt, FTatoi) {
     CHECK(ft_atoi("123") == atoi("123"));
+    CHECK(ft_atoi("-123") == atoi("-123"));
+    CHECK(ft_atoi("+123") == atoi("+123"));
+    CHECK(ft_atoi("-+123") == atoi("-+123"));
+    CHECK(ft_atoi("--123") == atoi("--123"));
+    CHECK(ft_atoi("001") == atoi("001"));
+    CHECK(ft_atoi("2147483647") == atoi("2147483647"));
+    CHECK(ft_atoi("-2147483648") == atoi("-2147483648"));
 }
 
 //unit test for: calloc
