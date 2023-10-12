@@ -2,12 +2,12 @@
 
 void *ft_memset(void *b, int c, size_t len)
 {
-    char *str;
+	char *str;
 
-   str = (char *)b;
-   while (len-- > 0)
-   {
-       *str++ = c;
-   }
-    return (b);
+	str = (char *) b;
+	while (len-- > 0)
+	{
+		*str++ = c;
+	}
+	return (b);
 }

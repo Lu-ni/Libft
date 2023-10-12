@@ -1,16 +1,16 @@
 #include "libft.h"
 
-void    *ft_memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-    void *adr;
+	void *adr;
 
-    adr = (void *) s;
-    while (n > 0)
-    {
-        if (*(char *)adr == (char)c)
-            return adr;
-        adr ++;
-        n --;
-    }
-    return ((void *) 0);
+	adr = (void *) s;
+	while (n > 0)
+	{
+		if (*(char *) adr == (char) c)
+			return (adr);
+		adr++;
+		n--;
+	}
+	return ((void *) 0);
 }
