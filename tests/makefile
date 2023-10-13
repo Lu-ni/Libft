@@ -1,5 +1,6 @@
 # Paths
 SRC_PATH = ../src/
+SRC_PATH_2 = ../src_part2/
 INCLUDE_PATH = ../include/
 CPPUTEST_PATH = /opt/homebrew/Cellar/cpputest/4.0# Replace with the actual path to CppUTest on your system
 
@@ -13,7 +14,7 @@ CXXFLAGS = $(CFLAGS)
 LDFLAGS = -L$(CPPUTEST_PATH)/lib -lCppUTest -lCppUTestExt
 
 # Source and Test Files
-SRCS = $(wildcard $(SRC_PATH)*.c)
+SRCS = $(wildcard $(SRC_PATH)*.c) $(wildcard $(SRC_PATH_2)*.c)
 TEST_FILES = $(wildcard *.cpp)
 OBJ_FILES = $(SRCS:.c=.o) $(TEST_FILES:.cpp=.o)
 
