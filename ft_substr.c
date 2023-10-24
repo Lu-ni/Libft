@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:48:05 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/24 17:49:09 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:29:27 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*substr = s[start++];
 		substr++;
 	}
+	*substr = '\0';
 	return (startsubstr);
 }

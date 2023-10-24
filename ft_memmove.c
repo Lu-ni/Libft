@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:48:05 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/24 17:49:07 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:05:28 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	destcpy = (char *)dst + len - 1;
 	srccpy = (char *)src + len - 1;
+	if (!dst && !src)
+		return ((void *) 0);
 	if (dst < src)
 	{
 		ft_memcpy(dst, src, len);

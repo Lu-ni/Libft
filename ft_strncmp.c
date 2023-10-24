@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:48:05 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/24 17:49:08 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/24 20:18:00 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	string1 = (unsigned char *)s1;
 	string2 = (unsigned char *)s2;
+	if (!n)
+		return (0);
 	while (*string1 && *string2 && n > 0)
 	{
 		if ((*string1 != *string2) || n == 1)
