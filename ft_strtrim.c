@@ -1,5 +1,6 @@
-#include "../include/libft.h"
+#include "libft.h"
 #include <stdlib.h>
+
 static int	ft_isinset(char c, char const *set)
 {
 	while(*set)
