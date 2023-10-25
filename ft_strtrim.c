@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:48:05 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/24 17:49:09 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/24 21:51:50 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*start;
 	int		i;
 
-	//	char	*trimmedstr;
-	//	char	*end;
+	if (!*s1)
+		return (ft_strdup(""));
 	i = 0;
 	while (s1[i] && ft_isinset(s1[i], set))
 		i++;
@@ -38,5 +38,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = ft_strlen(s1) - 1;
 	while (s1[i] && ft_isinset(s1[i], set))
 		i--;
-	return (ft_substr(s1, start - s1, i + 1));
+	return (ft_substr(s1, start - s1, i + 1 - (start - s1)));
 }

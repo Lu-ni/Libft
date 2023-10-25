@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:48:05 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/24 20:29:27 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:04:37 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 	{
 		substr = (char *)malloc(1);
-		substr[1] = '\0';
+		if (!substr)
+			return ((char *)0);
+		substr[0] = '\0';
 		return (substr);
 	}
 	if (ft_strlen(&s[start]) >= len)
