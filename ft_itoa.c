@@ -12,10 +12,10 @@
 
 #include "libft.h"
 #include <stdlib.h>
-int  ft_getlen(long num)
+int ft_getlen(long num)
 {
 	int len;
-	
+
 	if (num == 0)
 		return (1);
 	len = 0;
@@ -31,10 +31,9 @@ int  ft_getlen(long num)
 
 char *ft_itoa(int n)
 {
-	int	signe;
-	int len;
+	int   signe;
+	int   len;
 	char *str;
-
 
 	signe = 1;
 	len = ft_getlen(n);
@@ -43,7 +42,7 @@ char *ft_itoa(int n)
 	str = ft_calloc(len + 1, 1);
 	if (!str)
 		return (str);
-	if (n ==0)
+	if (n == 0)
 		str[0] = '0';
 	while (n)
 	{
@@ -53,5 +52,4 @@ char *ft_itoa(int n)
 	if (signe == -1)
 		str[0] = '-';
 	return (str);
-	
 }
