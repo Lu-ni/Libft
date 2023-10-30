@@ -16,11 +16,11 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*mem;
-	int		totalbyte; 
+	int		totalbyte;
 
 	mem = (char *)malloc(count * size);
-		if (!mem)
-			return (void *) 0;
+	if (!mem)
+		return ((void *)0);
 	totalbyte = size * count;
 	while (totalbyte > 0)
 	{

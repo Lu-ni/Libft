@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = ft_strdup(s);
 	if (!str)
 		return (str);
-	while(str[i])
+	while (str[i])
 	{
 		str[i] = f(i, str[i]);
 		i++;

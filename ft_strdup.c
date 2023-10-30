@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s1)
 	s1copy = (char *)s1;
 	duplicate = (char *)malloc(ft_strlen(s1) + 1);
 	if (!duplicate)
-		return ((char *) 0);
+		return ((char *)0);
 	duplicate_first = duplicate;
 	while (*s1copy)
 	{
