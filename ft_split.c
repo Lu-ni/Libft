@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:33:47 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/30 14:44:34 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/30 15:24:04 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_free(void *ptr)
 	return (1);
 }
 
-static char	*ft_sanityze(const char *str, char c)
+static char	*ft_sanityze(const char *str, char c, char **strfinal)
 {
 	char	*strcpy;
 	char	*strclean;
@@ -43,7 +43,24 @@ static char	*ft_sanityze(const char *str, char c)
 		strcpy++;
 	}
 	free(startofcpy);
+	*strfinal = startofclean;
 	return (startofclean);
+}
+
+void	ft_create_str(char *str, char c, int *words)
+{
+	int	i;
+
+	*words = 1;
+	i = 0;
+	if (!*str)
+	{
+		*words = 0;
+		return ;
+	}
+	while (str[i])
+		if (str[i++] == c)
+			*words += 1;
 }
 
 int	ft_countchar(char *str, char c)
@@ -66,17 +83,10 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	*startstr;
 
-	i = 0;
-	words = 1;
-	str = ft_sanityze(s, c);
-	if (!str)
+	if (!ft_sanityze(s, c, &str))
 		return ((char **)0);
 	startstr = str;
-	while (str[i])
-		if (str[i++] == c)
-			words++;
-	if (!*str)
-		words = 0;
+	ft_create_str(str, c, &words);
 	strlist = malloc((words + 1) * sizeof(char *));
 	if (!strlist && ft_free(startstr))
 		return (strlist);
