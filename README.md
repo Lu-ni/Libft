@@ -7,44 +7,6 @@
  - Every .c must compile with flags.
  - You must use the command ar to create your library, using the command libtool is forbidden.
 
-## first part
-In this first part, you must re-code a set of the libc functions, as defined in their man. Your functions will need to present the same prototype and behaviors as the orig- inals. Your functions’ names must be prefixed by “ft_”. For instance strlen becomes ft_strlen.
-
- [w] isalpha
- [w] isdigit
- [w] isalnum
- [w] isascii
- [w] isprint
- [w] strlen
- [w] memset
- [w] bzero
- [w] memcpy
- [w] memmove
- [w] strlcpy
- [w] strlcat
- [w] toupper
- [w] tolower
- [w] strchr
- [w] strrchr
- [w] strncmp
- [w] memchr
- [w] memcmp
- [w] strnstr
- [w] atoi
-
- [w] calloc
- [w] strup
-
- ## second part
-
- [ ] ft_substr
- [ ] ft_strjoin
- [ ] ft_strtrim
- [ ] ft_split
- [ ] ft_itoa
- [ ] ft_strmapi
- [ ] ft_striteri
- [ ] ft_putchar_fd
- [ ] ft_putstr_fd
- [ ] ft_putendl_fd
- [ ] ft_putnbr_fd
+# almost all check passes
+ - In ft_split, It need to free the memory of the nested list before abort when a bad allocation happens
+ - in ft_lstmap, it need to correctly use the del function f() to clean
