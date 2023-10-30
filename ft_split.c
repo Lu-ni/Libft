@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_free(void *ptr)
+static	int	ft_free(void *ptr)
 {
 	free(ptr);
 	return (1);
@@ -47,7 +47,7 @@ static char	*ft_sanityze(const char *str, char c, char **strfinal)
 	return (startofclean);
 }
 
-void	ft_create_str(char *str, char c, int *words)
+static	void	ft_create_str(char *str, char c, int *words)
 {
 	int	i;
 
@@ -63,7 +63,7 @@ void	ft_create_str(char *str, char c, int *words)
 			*words += 1;
 }
 
-int	ft_countchar(char *str, char c)
+static	int	ft_countchar(char *str, char c)
 {
 	char	*strcpy;
 	int		count;

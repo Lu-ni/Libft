@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_getlen(long num)
+static	int	ft_getlen(long num)
 {
 	int	len;
 
