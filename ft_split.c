@@ -6,7 +6,7 @@
 /*   By: lnicolli <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:33:47 by lnicolli          #+#    #+#             */
-/*   Updated: 2023/10/30 14:40:22 by lnicolli         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:44:34 by lnicolli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,7 @@ char	**ft_split(char const *s, char c)
 		if (str[i++] == c)
 			words++;
 	if (!*str)
-	{
-		strlist = malloc(sizeof(char *));
-		if (!strlist && ft_free(startstr))
-			return (strlist);
-		strlist[0] = (char *)0;
-		free(startstr);
-		return (strlist);
-	}
+		words = 0;
 	strlist = malloc((words + 1) * sizeof(char *));
 	if (!strlist && ft_free(startstr))
 		return (strlist);
